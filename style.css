@@ -4,9 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa:wght@600&display=swap');
 
 :root {
+    --primary-color: #f5f5f5;
+    --secondary-color: #626262;
     --default-btn-color: #dadada;
     --primary-btn-color: #424242;
     --primary-outline: 1.2px solid #616161;
+    --primary-border-radius: .3rem;
 }
 
 .material-symbols-rounded {
@@ -43,6 +46,33 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
 }
 
+h1, .h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2, .h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h3, .h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+h4, .h4 {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+p, .p1 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+
 ul {
     list-style: none;
     padding: 0;
@@ -67,6 +97,7 @@ li {
     transition: all 0.5s ease;
     z-index: 10;
 }
+
 
 .sidebar-grid {
     padding: 0 1.5rem;
@@ -113,11 +144,44 @@ li {
     outline: none;
 }
 
-.sid-icon-button:hover {
+button, .btn {
+    display: block;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: .9rem 1.5rem;
+    font-size: .9rem;
+    border-radius: var(--primary-border-radius);
+    transition: all 0.3s ease;
+}
+
+/*.btn-default {
+    background: var(--default-btn-color);
+    color: var(--primary-color);
+}*/
+
+.btn-main {
+    background-color: #202020;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn-main:hover, .btn-main:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 0px 3px #5a5a5a; 
+    box-shadow: 0px 0px 0px 3px #5a5a5a;
+}
+.btn-main:active {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 0px 3px #4d4d4d; 
+    box-shadow: 0px 0px 0px 3px #4d4d4d;
+}
+
+.sid-icon-button:hover, .btn-default:hover {
     outline: var(--primary-outline)
 }
 
-.sid-icon-button:active {
+.sid-icon-button:active, .btn-default:active {
     background-color: var(--default-btn-color);
 }
 
@@ -133,6 +197,8 @@ li {
 .sid-icon-button span {
     margin-left: 1rem;
 }
+
+
 .sid-icon-button span.material-symbols-rounded {
     font-size: 1.6rem;
 }
@@ -141,10 +207,96 @@ li {
     font-size: 1rem;
 }
 
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+main.dash {
+    position: relative;
+    left: 275px;
+    width: calc(100% - 275px);
+    transition: all 0.5s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: block;
+    margin: 0;
+    padding: 1.6rem;
+}
+
 .card {
     background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
+    border-radius: var(--primary-border-radius);
+    border: 1px solid #000;
+    padding: 1rem;
     margin-bottom: 1.5rem;
+}
+
+.card-1 {
+    width: 100%;
+}
+
+.card-2 {
+    width: 60%;
+}
+
+.card-3 {
+    width: 30%;
+}
+
+.card > * {
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    .sidebar-container {
+        width: 92px;
+    }
+
+    .sidebar-grid {
+        padding: 0 1 rem;
+    }
+
+    .sidebar-header {
+        flex-direction: column;
+    }
+
+    .sidebar-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .sidebar-header .sidebar-close-open {
+        display: none;
+    }
+
+    .sid-icon-button {
+        justify-content: center;
+    }
+
+    .sid-icon-button .btn-caption {
+        display: none;
+    }
+    .sid-icon-button span {
+        margin: 0;
+    }
+    main.dash {
+        left: 92px;
+        width: calc(100% - 92px);
+    }
 }
